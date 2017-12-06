@@ -52,11 +52,11 @@ $rowDm = mysql_fetch_array($queryDm);
         while($row = mysql_fetch_array($query)){
         ?>
         <div class="prd-item">
-            <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><img width="80" height="144" src="quantri/anh/<?php echo $row['anh_sp'];?>" /></a>
+            <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><img height="144" src="quantri/anh/<?php echo $row['anh_sp'];?>" /></a>
             <h3><a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><?php echo $row['ten_sp'];?></a></h3>
             <p>Bảo hành: <?php echo $row['bao_hanh'];?></p>
             <p>Tình trạng: <?php echo $row['tinh_trang'];?></p>
-            <p class="price"><span>Giá: <?php echo $row['gia_sp'];?> VNĐ</span></p>
+            <p class="price"><span>Giá: <?php echo number_format($row['gia_sp']);?> VNĐ</span></p>
             
         </div>
         <?php
@@ -68,5 +68,5 @@ $rowDm = mysql_fetch_array($queryDm);
         ?>
     </div>
 </div>    
-    
+<div class="clear"></div>
 <div id="pagination"><?php echo $listPages;?></div>    

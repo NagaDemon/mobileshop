@@ -8,10 +8,10 @@
 	}
 	
 body{
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	color:#666;
-	background:url(../anh/bg.gif) top left repeat;
+	/*background:url(../anh/bg.gif) top left repeat;*/
 	}	
 	
 /*---------- Wrapper----------*/	
@@ -53,7 +53,7 @@ body{
 	width:219px;
 	height:30px;
 	line-height:30px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	color:#666;
 	border-right:1px solid #CCC;
@@ -73,7 +73,7 @@ body{
 #cart p{
 	width:213px;
 	height:auto;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	text-align:center;
 	color:#FFF;
@@ -85,7 +85,7 @@ body{
 	}	
 
 #cart p a{
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	text-decoration:none;
 	color:#FF0;
@@ -130,7 +130,7 @@ body{
 	width:auto;
 	height:33px;
 	line-height:33px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	text-transform:capitalize;
@@ -169,11 +169,24 @@ body{
 	padding:20px 0px;
 }
 
+/*---------- Slideshow----------*/
+#slideshow{
+	border:1px solid #CCC;
+	margin-left: 20px;
+	margin-right:20px;
+	}
+	
+#slideshow img{
+	width:960px;
+	height:360px;
+	}	
+
 /*---------- Left Sidebar----------*/
 #l-col{
 	float:left;
 	width:220px;
 	height:auto;
+	margin-top: 20px;
 	padding-left:20px;
 	}
 .l-sidebar{
@@ -187,7 +200,7 @@ body{
 	width:206px;
 	height:35px;
 	line-height:35px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	color:#FFF;
@@ -219,7 +232,7 @@ ul#hotline li{
 	
 ul#hotline li span{
 	display:block;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	color:#EE0000;
 	}		
@@ -230,7 +243,7 @@ ul#hotline li span{
 	width:194px;
 	height:35px;
 	line-height:35px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	padding-left:12px;
@@ -280,20 +293,7 @@ ul#hotline li span{
 	width:740px;
 	height:auto;
 	padding-left:20px;
-	}
-	
-/*---------- Slideshow----------*/
-#slideshow{
-	width:718px;
-	height:300px;
-	border:1px solid #CCC;
-	margin-right:20px;
-	}
-	
-#slideshow img{
-	width:718px;
-	height:300px;
-	}		
+	}	
 
 /*---------- Main----------*/
 #main{
@@ -311,7 +311,7 @@ ul#hotline li span{
 	width:708px;
 	height:35px;
 	line-height:35px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	color:#FFF;
@@ -342,7 +342,7 @@ ul#hotline li span{
 	width:208px;
 	height:auto;
 	margin:5px 0px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	font-weight:bold;
 	}
@@ -350,7 +350,7 @@ ul#hotline li span{
 .prd-item p{
 	width:208px;
 	height:auto;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	color:#666;
 	margin:5px 0px;
@@ -363,7 +363,7 @@ ul#hotline li span{
 
 .prd-item p.price{
 	padding-top:10px;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	color:#C40000;
@@ -407,7 +407,7 @@ ul#hotline li span{
 #footer #footer-info h4{
 	width:1000px;
 	height:auto;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:15px;
 	font-weight:bold;
 	color:#FFF;
@@ -417,7 +417,7 @@ ul#hotline li span{
 #footer #footer-info p{
 	width:1000px;
 	height:auto;
-	font-family:Verdana, Geneva, sans-serif;
+	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	color:#FFF;
 	padding:10px;
