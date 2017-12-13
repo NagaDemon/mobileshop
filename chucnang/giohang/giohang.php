@@ -38,7 +38,7 @@
         ?>
         <table width="100%">
             <tr>
-                <td class="cart-item-img" width="25%" rowspan="4"><img height="144" src="quantri/anh/<?php echo $row['anh_sp'];?>" /></td>
+                <td class="cart-item-img" width="25%" rowspan="4"><img height="144" src="quantri/images/<?php echo $row['anh_sp'];?>" /></td>
                 <td width="25%">Sản phẩm:</td>
                 <td class="cart-item-title" width="50%"><?php echo $row['ten_sp'];?></td>
             </tr>

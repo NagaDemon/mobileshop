@@ -10,7 +10,7 @@
             while($row = mysql_fetch_array($query)) {
         ?>
         <div class="prd-item">
-            <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><img height="144" src="quantri/anh/<?php echo
+            <a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><img height="144" src="quantri/images/<?php echo
             $row['anh_sp'];?>" /></a>
             <h3><a href="index.php?page_layout=chitietsp&id_sp=<?php echo $row['id_sp'];?>"><?php echo $row['ten_sp'];?></a></h3>
             <p>Bảo hành: <?php echo $row['bao_hanh'];?></p>

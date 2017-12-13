@@ -6,7 +6,7 @@ $row = mysql_fetch_array($query);
 ?>
 <div class="prd-block">  
     <div class="prd-only">
-        <div class="prd-img"><img width="100%" src="quantri/anh/<?php echo $row['anh_sp'];?>" /></div>   
+        <div class="prd-img"><img width="100%" src="quantri/images/<?php echo $row['anh_sp'];?>" /></div>   
         <br>
         <div class="prd-intro">
             <h3><?php echo $row['ten_sp'];?></h3>
