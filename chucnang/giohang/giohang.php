@@ -38,13 +38,13 @@
         ?>
         <table width="100%">
             <tr>
-                <td class="cart-item-img" width="25%" rowspan="4"><img width="80" height="144" src="quantri/anh/<?php echo $row['anh_sp'];?>" /></td>
+                <td class="cart-item-img" width="25%" rowspan="4"><img height="144" src="quantri/images/<?php echo $row['anh_sp'];?>" /></td>
                 <td width="25%">Sản phẩm:</td>
                 <td class="cart-item-title" width="50%"><?php echo $row['ten_sp'];?></td>
             </tr>
             <tr>
                 <td>Giá:</td>
-                <td><span><?php echo $row['gia_sp'];?> VNĐ</span></td>
+                <td><span><?php echo number_format($row['gia_sp']);?> VNĐ</span></td>
             </tr>
             <tr>
                 <td>Số lượng:</td>
@@ -52,7 +52,7 @@
             </tr>
             <tr>
                 <td>Tổng tiền:</td>
-                <td><span><?php echo $totalPrice;?> VNĐ</span></td>
+                <td><span><?php echo number_format($totalPrice);?> VNĐ</span></td>
             </tr>
         </table>
         <?php
@@ -60,7 +60,7 @@
         }
         ?>
         </form> 
-        <p>Tổng giá trị giỏ hàng là: <span><?php echo $totalPriceAll;?> VNĐ</span></p>
+        <p>Tổng giá trị giỏ hàng là: <span style="font-size: 20px;"><?php echo number_format($totalPriceAll);?> VNĐ</span></p>
         <p class="update-cart"><a onclick="document.getElementById('giohang').submit();" href="#"><span>Cập nhật giỏ hàng</span></a></p>
 
         <p><a href="index.php">Bổ sung sản phẩm</a> <span>•</span> <a href="chucnang/giohang/xoahang.php?id_sp=0" onclick="return deleteAll();">Xóa hết sản phẩm</a> <span>•</span> <a href="index.php?page_layout=muahang">Dừng mua và Thanh toán</a></p>

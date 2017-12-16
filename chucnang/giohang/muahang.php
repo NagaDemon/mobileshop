@@ -27,9 +27,9 @@ if(isset($_SESSION['giohang'])){
             ?>
             <tr>
                 <td class="prd-name"><?php echo $row['ten_sp'];?></td>
-                <td class="prd-price"><?php echo $row['gia_sp'];?> VNĐ</td>
+                <td class="prd-price"><?php echo number_format($row['gia_sp']);?> VNĐ</td>
                 <td class="prd-number"><?php echo $_SESSION['giohang'][$row['id_sp']];?></td>
-                <td class="prd-total"><?php echo $totalPrice;?> VNĐ</td>
+                <td class="prd-total"><?php echo number_format($totalPrice);?> VNĐ</td>
             </tr>
             <?php
                 $totalPriceAll += $totalPrice;
@@ -39,7 +39,7 @@ if(isset($_SESSION['giohang'])){
             <tr>
                 <td class="prd-name">Tổng giá trị hóa đơn là:</td>
                 <td colspan="2"></td>
-                <td class="prd-total"><span><?php echo $totalPriceAll;?> VNĐ</span></td>
+                <td class="prd-total"><span><?php echo number_format($totalPriceAll);?> VNĐ</span></td>
             </tr>
         </table>
     
@@ -47,45 +47,36 @@ if(isset($_SESSION['giohang'])){
     
     <?php
     if(isset($_POST['submit'])){
-        if($_POST['ten'] == ''){
-            $error_ten = '<span>(*)</span>';
-        }
-        else{
-            $ten =  $_POST['ten'];
-        }
-        
-        if($_POST['mail'] == ''){
-            $error_mail = '<span>(*)</span>';
-        }
-        else{
-            $mail = $_POST['mail'];
-        }
-        
-        if($_POST['dt'] == ''){
-            $error_dt = '<span>(*)</span>';
-        }
-        else{
-            $dt = $_POST['dt'];
-        }
-        
-        if($_POST['dc'] == ''){
-            $error_dc = '<span>(*)</span>';
-        }
-        else{
-            $dc =   $_POST['dc'];
-        }       
+        $ten =  $_POST['ten'];
+        $mail = $_POST['mail'];
+        $dt = $_POST['dt'];
+        $dc =   $_POST['dc'];
     }
     ?>
-        
+    
+    <br>    
     <div class="form-payment">
-        <form method="post">
-        <ul>
-            <li class="info-cus"><label>Tên khách hàng</label><br /><input type="text" name="ten" /> <?php if(isset($error_ten)){echo $error_ten;}?></li>
-            <li class="info-cus"><label>Địa chỉ Email</label><br /><input type="text" name="mail" /> <?php if(isset($error_mail)){echo $error_mail;}?></li>
-            <li class="info-cus"><label>Số Điện thoại</label><br /><input type="text" name="dt" /> <?php if(isset($error_dt)){echo $error_dt;}?></li>
-            <li class="info-cus"><label>Địa chỉ nhận hàng</label><br /><input type="text" name="dc" /> <?php if(isset($error_dc)){echo $error_dc;}?></li>
-            <li><input type="submit" name="submit" value="Xác nhận mua hàng" /> <input type="reset" name="reset" value="Làm lại" /></li>
-        </ul>
-        </form>
+        <div class="bootstrap-iso">
+            <form method="post">
+                <div class="form-group">
+                    <label for="ten">Tên khách hàng:</label>
+                    <input type="text" class="form-control" name="ten" required="">
+                </div>
+                <div class="form-group">
+                    <label for="sdt">Địa chỉ Email:</label>
+                    <input type="text" class="form-control" name="mail" required="">
+                </div>
+                <div class="form-group">
+                    <label for="sdt">Số điện thoại:</label>
+                    <input type="number" class="form-control" name="dt" required="">
+                </div>
+                <div class="form-group">
+                    <label for="noidung">Địa chỉ nhận hàng:</label>
+                    <textarea class="form-control" rows="5" name="dc" required=""></textarea>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary">Xác nhận mua hàng</button>
+            </form>
+        </div>
     </div>
+
 </div>    

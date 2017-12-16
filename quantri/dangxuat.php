@@ -4,5 +4,5 @@
 		session_unset($_SESSION['tk']);
 		session_unset($_SESSION['mk']);
 	}
-	header('location:index.php');
+	header('location: dangnhap.php');
 ?>

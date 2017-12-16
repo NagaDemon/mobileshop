@@ -2,12 +2,11 @@
 	<h2>liên hệ</h2>
     <div class="contact">
     	<ul>
-        	<li>Các bạn có thể liên hệ với Trung tâm Tin học và Công nghệ Vietpro theo các kênh sau</li>
-            <li>• <span>Website:</span> <a href="http://vietpro.edu.vn">http://vietpro.edu.vn</a></li>
-            <li>• <span>Hotline:</span> 0968 511 155</li>
-            <li>• <span>Email:</span> <a href="#">vietpro.edu.vn@gmail.com</a></li>
-            <li>• <span>Facebook:</span> <a href="http://facebook.com/tinhocvietpro">http://facebook.com/tinhocvietpro</a></li>
-            <li>• <span>Địa chỉ:</span> Số 25 Ngõ 178/71 Tây Sơn, Trung Liệt, Đống Đa, Hà Nội</li>
+        	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus faucibus, neque eu lacinia iaculis, ipsum mi aliquam mi, quis tempus velit sem posuere ligula. Pellentesque vel metus quis eros lobortis dignissim. Pellentesque mollis lacinia porta. Aliquam urna neque, posuere sit amet nisl nec, bibendum fringilla leo. Donec luctus pellentesque mollis. Suspendisse rhoncus, leo malesuada elementum volutpat, ante mauris viverra eros, quis condimentum velit tortor eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum tempus eu tortor eu feugiat. Curabitur finibus imperdiet ipsum, quis ornare ante rutrum eget. Donec vehicula velit nec libero ultrices euismod. Aliquam odio nibh, egestas fringilla vulputate ac, imperdiet eget leo. Mauris luctus enim ac felis lacinia, vel commodo dolor varius. Ut nunc ante, sagittis blandit libero et, vestibulum sagittis turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</li>
+            <li>• <span>Website:</span> <a href="#">http://google.com</a></li>
+            <li>• <span>Hotline:</span> 0123 456 789</li>
+            <li>• <span>Email:</span> <a href="#">abcxyz@gmail.com</a></li>
+            <li>• <span>Địa chỉ:</span> Hà Nội, Việt Nam</li>
         </ul>
     </div>
 </div>
