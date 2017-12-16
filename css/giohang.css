@@ -83,7 +83,15 @@ p.update-cart span{
 	background:linear-gradient(180deg, #F0EFEF 20%, #E0DEDE 60%) repeat scroll 0 0 transparent;
 	border-radius:40px 40px 40px 40px;
 	}	
-	
+
+#custom_span1 {
+	color: #666666;
+	font-size: 14px;
+}
+
+#custom_span2 {
+	font-size: 14px;
+}
 	
 	
 	

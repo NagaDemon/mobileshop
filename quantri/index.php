@@ -41,7 +41,7 @@
     <?php
         if(isset($_GET['page_layout'])) {
             $pg = $_GET['page_layout'];
-            if($pg == 'thanhvien' || $pg == 'dmsanpham' || $pg == 'sanpham') {
+            if($pg == 'thanhvien' || $pg == 'dmsanpham' || $pg == 'sanpham' || $pg == 'donhang') {
                 echo '<link href="plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">';
             } else {
                 echo '<link href="plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet"/>';
@@ -107,19 +107,18 @@
                         $tk = $_SESSION['tk'];
                         $sql = "SELECT tai_khoan, email FROM thanhvien WHERE tai_khoan = '$tk'";
                         $query = mysql_query($sql);
-                        while($row = mysql_fetch_array($query)) {
+                        $row = mysql_fetch_array($query);
                     ?>
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $row['tai_khoan']; ?></div>
                     <div class="email"><?php echo $row['email']; ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="dangxuat.php"><i class="material-icons">input</i>Sign Out</a></li>
+                            <!-- <li><a href="index.php?page_layout=suatv&id_thanhvien=<?php echo $row['id_thanhvien']; ?>"><i class="material-icons">person</i>Profile</a></li> -->
+                            <!-- <li role="seperator" class="divider"></li> -->
+                            <li><a onclick="return dangXuat();" href="dangxuat.php"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
-                    <?php } ?>
                 </div>
             </div>
             <!-- #User Info -->
@@ -136,6 +135,8 @@
                                 $dmsanpham = 'active';
                             } elseif ($_GET['page_layout'] == 'sanpham' || $_GET['page_layout'] == 'suasp' || $_GET['page_layout'] == 'themsp') {
                                 $sanpham = 'active';
+                            } elseif ($_GET['page_layout'] == 'donhang') {
+                                $donhang = 'active';
                             } else {
                                 $home = 'active';
                             }
@@ -161,6 +162,12 @@
                             <span>Danh mục sản phẩm</span>
                         </a>
                     </li>
+                    <li class="<?php echo $donhang;?>">
+                        <a href="index.php?page_layout=donhang">
+                            <i class="material-icons">event_note</i>
+                            <span>Đơn hàng</span>
+                        </a>
+                    </li>                    
                     <li class="<?php echo $thanhvien; ?>">
                         <a href="index.php?page_layout=thanhvien">
                             <i class="material-icons">person</i>
@@ -206,6 +213,10 @@
                         case 'suadm': include_once('pages/forms/danhmuc/suadm.php');
                             break;
                         case 'themdm': include_once('pages/forms/danhmuc/themdm.php');
+                            break;
+                        case 'donhang': include_once('pages/tables/donhang.php');
+                            break;
+                        case 'chitietdh': include_once('pages/forms/donhang/chitietdh.php');
                             break;
                         default: include_once('pages/index-content.php');
                     }

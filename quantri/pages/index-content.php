@@ -37,11 +37,25 @@
                 </div>
             </div>
         </a>
-    </div>        
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <a href="index.php?page_layout=sanpham" class="tqt-link-div">
+            <div class="info-box bg-cyan hover-zoom-effect">
+                <div class="icon">
+                    <i class="material-icons">event_note</i>
+                </div>
+                <div class="content">
+                    <div class="text">ĐƠN HÀNG</div>
+                    <div class="number">15</div>
+                </div>
+            </div>
+        </a>
+    </div>            
 
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <a href="index.php?page_layout=thanhvien" class="tqt-link-div">
-            <div class="info-box bg-blue hover-zoom-effect">
+            <div class="info-box bg-red hover-zoom-effect">
                 <div class="icon">
                     <i class="material-icons">person</i>
                 </div>
@@ -55,7 +69,7 @@
 
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <a href="#" class="tqt-link-div">
-            <div class="info-box bg-red hover-zoom-effect">
+            <div class="info-box bg-blue hover-zoom-effect">
                 <div class="icon">
                     <i class="material-icons">autorenew</i>
                 </div>

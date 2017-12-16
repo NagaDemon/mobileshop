@@ -3,13 +3,17 @@
         var conf = confirm("Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng?");
         return conf;    
     }
+
+    function deleteProduct() {
+        var conf = confirm("Bạn có chắc chắn muốn xóa sản phẩm này?");
+        return conf;
+    }
 </script>
 
 <div class="prd-block">
     <h2>giỏ hàng của bạn</h2>
     <?php
-    if(isset($_SESSION['giohang'])){
-        
+    if(isset($_SESSION['giohang']) && !empty($_SESSION['giohang'])){
         if(isset($_POST['sl'])){
             foreach($_POST['sl'] as $id_sp=>$sl){
                 if($sl == 0){
@@ -23,7 +27,7 @@
         
         $arrId = array();
         foreach($_SESSION['giohang'] as $id_sp=>$so_luong){
-            $arrId[] = $id_sp;      
+            $arrId[] = $id_sp; 
         }
         $strId = implode(',', $arrId);
         $sql = "SELECT * FROM sanpham WHERE id_sp IN($strId) ORDER BY id_sp DESC";
@@ -48,7 +52,11 @@
             </tr>
             <tr>
                 <td>Số lượng:</td>
-                <td><input type="number" min="0" name="sl[<?php echo $row['id_sp']?>]" value="<?php echo $_SESSION['giohang'][$row['id_sp']];?>" /> (Bỏ mặt hàng này) <a href="chucnang/giohang/xoahang.php?id_sp=<?php echo $row['id_sp'];?>">X</a></td>
+                <td>
+                    <div class="bootstrap-iso">
+                    <input type="number" min="1" max="1000" class="form-control-custom" name="sl[<?php echo $row['id_sp']?>]" value="<?php echo $_SESSION['giohang'][$row['id_sp']];?>" /> <span id="custom_span1">(Bỏ mặt hàng này)</span> <a href="chucnang/giohang/xoahang.php?id_sp=<?php echo $row['id_sp'];?>" onclick="return deleteProduct()"><span id="custom_span2" class="glyphicon glyphicon-trash"></span></a>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td>Tổng tiền:</td>
@@ -60,14 +68,23 @@
         }
         ?>
         </form> 
-        <p>Tổng giá trị giỏ hàng là: <span style="font-size: 20px;"><?php echo number_format($totalPriceAll);?> VNĐ</span></p>
+        <p style="font-size: 13px;">Tổng giá trị giỏ hàng là: <span style="font-size: 20px;"><?php echo number_format($totalPriceAll);?> VNĐ</span></p>
         <p class="update-cart"><a onclick="document.getElementById('giohang').submit();" href="#"><span>Cập nhật giỏ hàng</span></a></p>
 
-        <p><a href="index.php">Bổ sung sản phẩm</a> <span>•</span> <a href="chucnang/giohang/xoahang.php?id_sp=0" onclick="return deleteAll();">Xóa hết sản phẩm</a> <span>•</span> <a href="index.php?page_layout=muahang">Dừng mua và Thanh toán</a></p>
+        <br>
+        <div class="bootstrap-iso">
+            <button type="button" class="btn btn-primary"><a href="index.php">Bổ sung sản phẩm</a></button>
+            <button type="button" class="btn btn-danger"><a href="chucnang/giohang/xoahang.php?id_sp=0" onclick="return deleteAll();">Xóa hết sản phẩm</a></button>
+            <button type="button" class="btn btn-success"><a href="index.php?page_layout=muahang">Dừng mua và thanh toán</a></button>
+        </div>
+
     </div>
-    <?php
-    }else {
-        echo '<script>alert("Hiện không có Sản phẩm nào trong Giỏ hàng của bạn!");</script>';   
-    }
-    ?>
+    <?php } else { ?>
+        <div class="bootstrap-iso">
+            <div class="alert alert-danger-custom">
+                Bạn không có sản phẩm nào trong giỏ hàng.
+            </div>
+            <button type="button" class="btn btn-primary"><a href="index.php">Bổ sung sản phẩm</a></button>
+        </div>
+    <?php } ?>
 </div>   

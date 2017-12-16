@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2017 at 02:15 PM
+-- Generation Time: Dec 16, 2017 at 09:53 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -23,6 +23,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `blsanpham`
+--
+
+CREATE TABLE `blsanpham` (
+  `id_bl` int(10) NOT NULL,
+  `id_sp` int(10) NOT NULL,
+  `ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dien_thoai` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `binh_luan` text COLLATE utf8_unicode_ci NOT NULL,
+  `ngay_gio` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `blsanpham`
+--
+
+INSERT INTO `blsanpham` (`id_bl`, `id_sp`, `ten`, `dien_thoai`, `binh_luan`, `ngay_gio`) VALUES
+(1, 1, 'Tin TQ', '01666068838', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ligula nibh, consectetur gravida odio congue id. Suspendisse potenti.', '2017-11-03 09:19:30'),
+(2, 1, 'Hoang NH', '01688896123', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ligula nibh, consectetur gravida odio congue id. Suspendisse potenti.', '2017-10-09 06:19:30'),
+(3, 1, 'Tuan LD', '01673979660', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ligula nibh, consectetur gravida odio congue id. Suspendisse potenti.', '2017-07-24 08:20:11'),
+(4, 1, 'Tuan HM', '0974129740', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ligula nibh, consectetur gravida odio congue id. Suspendisse potenti.', '2017-05-15 02:29:18'),
+(6, 36, 'Anonymous', '9999999', 'lorem ipsum dolor sit amet', '2017-11-03 18:05:22'),
+(7, 4, 'a', 'b', 'c', '2017-11-16 17:40:09'),
+(8, 4, 'trần quang tín', '01666068838', 'lorum ipsum dolor sit amet', '2017-11-16 17:40:41'),
+(9, 6, 'uyguygu', '123123', 'b', '2017-12-12 09:03:02'),
+(10, 6, 'dfasdf', '098481498498', 'dgergwerg', '2017-12-13 09:36:32');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dmsanpham`
 --
 
@@ -36,19 +66,42 @@ CREATE TABLE `dmsanpham` (
 --
 
 INSERT INTO `dmsanpham` (`id_dm`, `ten_dm`) VALUES
+(8, 'Asus'),
+(7, 'Blackberry'),
+(5, 'HTC'),
 (1, 'iPhone'),
+(9, 'Lenovo'),
+(4, 'LG'),
+(6, 'Nokia'),
 (2, 'Samsung'),
 (3, 'Sony Ericson'),
-(4, 'LG'),
-(5, 'HTC'),
-(6, 'Nokia'),
-(7, 'Blackberry'),
-(8, 'Asus'),
-(9, 'Lenovo'),
-(10, 'Motorola'),
-(11, 'Mobiado'),
-(12, 'Vertu'),
-(13, 'QMobile');
+(12, 'Vertu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `donhang`
+--
+
+CREATE TABLE `donhang` (
+  `id_dh` int(10) NOT NULL,
+  `ten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dien_thoai` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `dia_chi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tinh_trang` int(1) NOT NULL,
+  `id_sp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `so_luong` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `donhang`
+--
+
+INSERT INTO `donhang` (`id_dh`, `ten`, `email`, `dien_thoai`, `dia_chi`, `tinh_trang`, `id_sp`, `so_luong`) VALUES
+(16, 'Trần Quang Tín', 'tranquangtin710@gmail.com', '01666068838', 'Mipec Riverside Long Biên', 0, '5,6', '3,1'),
+(17, 'tqt', 'afasdf@gmail.com', '14123213213', 'đống đa\r\n', 1, '6', '4'),
+(18, 'Hoàng Minh Tuấn', 'minhtuan@gmail.com', '123456789', 'Cầu Giấy, Hà Nội', 0, '2,3', '2,6');
 
 -- --------------------------------------------------------
 
@@ -61,7 +114,7 @@ CREATE TABLE `sanpham` (
   `id_dm` int(10) NOT NULL,
   `ten_sp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `anh_sp` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `gia_sp` int(10) NOT NULL,
+  `gia_sp` int(11) NOT NULL,
   `bao_hanh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `phu_kien` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `tinh_trang` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -76,43 +129,12 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`id_sp`, `id_dm`, `ten_sp`, `anh_sp`, `gia_sp`, `bao_hanh`, `phu_kien`, `tinh_trang`, `khuyen_mai`, `trang_thai`, `dac_biet`, `chi_tiet_sp`) VALUES
-(1, 1, 'IPhone 3GS 32G Màu Đen', 'IPhone-3GS-32G-Mau-Den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(2, 1, 'iPhone 4 16G Quốc Tế Trắng', 'iPhone-4-16G-Quoc-Te-Trang.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(3, 1, 'iPhone 5 16GB Quốc Tế Đen', 'iPhone-5-16GB-Quoc-Te-Den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(4, 1, 'iPhone 5C 16GB Blue', 'iPhone-5C-16GB-Blue.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(5, 1, 'iPhone 5S 32GB Quốc tế Màu Trắng', 'iPhone-5S-32GB-Quoc-te-Mau-Trang.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(6, 2, 'Samsung Galaxy Note N7000 pink', 'Sam-Galaxy-Note-N7000-pink.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(7, 2, 'Samsung Galaxy Note 2 đen', 'samsung-galaxy-note-2-den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(8, 2, 'Samsung Galaxy Note 3', 'samsung-galaxy-note-3.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(9, 2, 'Samsung Galaxy S2', 'samsung-galaxy-s2.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(10, 2, 'Samsung Galaxy S3', 'samsung-galaxy-s3.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(11, 2, 'Samsung Galaxy S4', 'samsung-galaxy-s4-galaxy.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(12, 3, 'Sony Arc S (LT18i) Trắng', 'Sony-arc-S-LT18i-Trang.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(13, 3, 'Sony Arc S', 'Sony-Arc-S.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(14, 3, 'Sony X10', 'sony-x10.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(15, 3, 'Sony Xperia TX (LT29i) Đen', 'Sony-Xperia-TX-LT29i-Den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(16, 3, 'Sony Xperia Z Màu Đen', 'Sony-Xperia-Z-Mau-Den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(17, 4, 'LG F160 Optimus LTE 2', 'LG-F160-Optimus-LTE-2.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(18, 4, 'LG LTE 3 (LG F260)', 'LG-LTE-3-LG F260.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(19, 4, 'LG Optimus 2X SU660', 'LG-optimus-2x-SU660.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(20, 4, 'LG Optimus 3D SU760', 'LG-Optimus-3D-SU760.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(21, 4, 'LG Optimus G', 'LG-Optimus-G.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(22, 4, 'LG Optimus L7(LG P705)', 'LG-Optimus-L7LG P705.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(23, 5, 'HTC EVO 3D', 'HTC-EVO-3D.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(24, 5, 'HTC One Đen 16GB công ty FPT', 'HTC-One-Den-16GB-cong-ty-FPT.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(25, 5, 'HTC One Trắng 16GB công ty FPT', 'HTC-One-Trang-16GB-cong-ty-FPT.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(26, 5, 'HTC one x white', 'htc-one-x-white.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(27, 5, 'HTC Windows Phone 8S', 'HTC-Windows-Phone-8S.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(28, 6, 'Lumia 800 đen', 'lumia-800-den.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(29, 6, 'Lumia 900 trắng', 'lumia-900-trang.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(30, 6, 'Lumia 920 hồng', 'lumia-920-hong.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(31, 6, 'Lumia 800 mau trắng', 'lumia-800-mau-trang.jpeg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(32, 6, 'Nokia 8800 Sirocco Gold', 'Nokia-8800-Sirocco-Gold.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(33, 7, 'Blackberry 8820', 'Blackberry-8820.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(34, 7, 'Blackberry 8830', 'Blackberry-8830.jpeg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(35, 7, 'Blackberry Bold 9000', 'Blackberry-Bold-9000.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(36, 7, 'BlackBerry Bold 9700', 'BlackBerry-Bold-9700.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.'),
-(37, 7, 'BlackBerry Curve 3G 9300', 'BlackBerry-Curve-3G-9300.jpg', 8600000, '12 tháng', 'Hộp, sách, sạc, cáp, tai nghe', 'Máy Mới 100%', 'Dán Màn Hình 3 lớp', 'Còn hàng', 1, 'Tất cả các sản phẩm Điện thoại của Vietpro Mobile Shop đều là các sản phẩm chính hãng, được bảo hành 12 tháng trên toàn quốc.');
+(1, 2, 'Samsung S7 Edge 11', 'samsungs7edge.png', 7000000, '6 tháng', 'Sạc pin, tai nghe', 'Máy mới 99%', 'Dán màn hình', 'Còn hàng', 1, 'Hàng xách tay'),
+(2, 2, 'Samsung Note 8', 'samsungnote8.png', 16000000, '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', 'Dán màn hình', 'Còn hàng', 1, 'Hàng xách tay'),
+(3, 1, 'iPhone 6S', 'iphone6s.png', 8000000, '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', 'Dán cường lực', 'Còn hàng', 1, 'Hàng xách tay'),
+(4, 1, 'iPhone 6 Plus', 'iphone6plus.png', 10000000, '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', 'Dán cường lực', 'Còn hàng', 1, 'Hàng xách tay'),
+(5, 1, 'iPhone 7 Plus', 'iphone7plus.png', 14000000, '12 tháng', 'Sạc pin, tai nghe', 'Máy Mới 100%', 'Dán cường lực', 'Còn hàng', 1, 'Hàng xách tay'),
+(6, 1, 'iPhone X', 'iphonex.png', 30000000, '12 tháng', 'Sạc pin, tai nghe', 'Máy Mới 100%', 'Dán cường lực', 'Còn hàng', 1, 'Hàng xách tay');
 
 -- --------------------------------------------------------
 
@@ -123,35 +145,48 @@ INSERT INTO `sanpham` (`id_sp`, `id_dm`, `ten_sp`, `anh_sp`, `gia_sp`, `bao_hanh
 CREATE TABLE `thanhvien` (
   `id_thanhvien` int(10) NOT NULL,
   `tai_khoan` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `mat_khau` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `quyen_truy_cap` int(1) NOT NULL
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `quyen_truy_cap` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `mat_khau` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `thanhvien`
 --
 
-INSERT INTO `thanhvien` (`id_thanhvien`, `tai_khoan`, `mat_khau`, `quyen_truy_cap`) VALUES
-(1, 'tintran', 'tintran123', 0),
-(2, 'minhtuan', 'minhtuan123', 1),
-(3, 'dinhtuan', 'dinhtuan123', 1),
-(4, 'huyhoang', 'huyhoang123', 1);
+INSERT INTO `thanhvien` (`id_thanhvien`, `tai_khoan`, `email`, `quyen_truy_cap`, `mat_khau`) VALUES
+(1, 'tintran', 'tranquangtin710@gmail.com', 'Admin', 'tintran123'),
+(2, 'huyhoang', 'nguyenhuyhoang@gmail.com', 'Editor', 'huyhoang123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `blsanpham`
+--
+ALTER TABLE `blsanpham`
+  ADD PRIMARY KEY (`id_bl`);
+
+--
 -- Indexes for table `dmsanpham`
 --
 ALTER TABLE `dmsanpham`
-  ADD PRIMARY KEY (`id_dm`);
+  ADD PRIMARY KEY (`id_dm`),
+  ADD UNIQUE KEY `ten_dm` (`ten_dm`);
+
+--
+-- Indexes for table `donhang`
+--
+ALTER TABLE `donhang`
+  ADD PRIMARY KEY (`id_dh`);
 
 --
 -- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  ADD PRIMARY KEY (`id_sp`);
+  ADD PRIMARY KEY (`id_sp`),
+  ADD UNIQUE KEY `ten_sp` (`ten_sp`);
 
 --
 -- Indexes for table `thanhvien`
@@ -164,20 +199,30 @@ ALTER TABLE `thanhvien`
 --
 
 --
+-- AUTO_INCREMENT for table `blsanpham`
+--
+ALTER TABLE `blsanpham`
+  MODIFY `id_bl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `dmsanpham`
 --
 ALTER TABLE `dmsanpham`
-  MODIFY `id_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_dm` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `donhang`
+--
+ALTER TABLE `donhang`
+  MODIFY `id_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `thanhvien`
 --
 ALTER TABLE `thanhvien`
-  MODIFY `id_thanhvien` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_thanhvien` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
