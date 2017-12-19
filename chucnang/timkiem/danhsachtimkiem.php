@@ -56,7 +56,7 @@ if($pageNum = 1) {
     }  
 }
 
-
+// Tìm kiếm từ khóa
 ?>
 <div class="prd-block">
     <h2>kết quả tìm được với từ khóa <span class="skeyword">"<?php echo $stext;?>"</span></h2>
@@ -77,8 +77,7 @@ if($pageNum = 1) {
                 echo '<div class="clear"></div>';
             }
         }
-        ?>
-        
+        ?>        
     </div>
 </div>
 

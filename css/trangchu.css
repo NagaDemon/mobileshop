@@ -6,6 +6,11 @@
 	margin:0px;
 	padding:0px;
 	}
+
+@font-face {
+	font-family: "Montserrat Regular";
+	src: url("css/fonts/Montserrat-Regular_0.ttf");
+}
 	
 body{
 	font-family:Montserrat Light, sans-serif;
@@ -81,14 +86,19 @@ body{
 	
 #cart p span{
 	font-weight:bold;
-	color:#FF0;
-	}	
+	color:white;
+	}
+
+#cart p span .special {
+	font-size:14px;
+	color:white;
+	}		
 
 #cart p a{
 	font-family:Montserrat Light, sans-serif;
 	font-size:12px;
 	text-decoration:none;
-	color:#FF0;
+	color:#FFFFFF;
 	font-weight:bold;
 	}
 
@@ -228,7 +238,7 @@ ul#hotline li{
 	height:auto;
 	text-align:right;
 	padding-right:12px;
-	}
+}
 	
 ul#hotline li span{
 	display:block;
@@ -343,7 +353,7 @@ ul#hotline li span{
 	height:auto;
 	margin:5px 0px;
 	font-family:Montserrat Light, sans-serif;
-	font-size:12px;
+	font-size:14px;
 	font-weight:bold;
 	}
 	
