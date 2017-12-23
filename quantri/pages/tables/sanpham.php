@@ -39,7 +39,7 @@
                             <tr>
                                 <td><?php echo $row['id_sp']; ?></td>
                                 <td><?php echo $row['ten_sp']; ?></td>
-                                <td><?php echo ($row['gia_sp']); ?> VNĐ</td>
+                                <td><?php echo number_format($row['gia_sp']); ?></td>
                                 <td><?php echo $row['ten_dm']; ?></td>
                                 <td align="center"><img width="60" src="images/<?php echo $row['anh_sp']; ?>"/></td>
                                 <td><a href="index.php?page_layout=suasp&id_sp=<?php echo $row['id_sp']; ?>"><i class="material-icons">edit</i></a></td>
