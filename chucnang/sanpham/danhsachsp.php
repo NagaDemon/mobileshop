@@ -16,6 +16,9 @@ $query = mysql_query($sql);
 $totalRow = mysql_num_rows(mysql_query("SELECT * FROM sanpham WHERE id_dm = $id_dm"));
 $pageNum = ceil($totalRow/$rowsPerPage);
 
+if($pageNum == 1) {
+    $listPages = '';
+} else {
 $listPages = '';
 // Tạo nút Trang cuối và Trang sau >>
 if($page > 1){
@@ -38,6 +41,8 @@ if($page < $pageNum){
     $pageNext = $page + 1;
     $listPages .= '<a href="'.$_SERVER['PHP_SELF'].'?page_layout=danhsachsp&id_dm='.$id_dm.'&page='.$pageNext.'">>></a> ';
     $listPages .= '<a href="'.$_SERVER['PHP_SELF'].'?page_layout=danhsachsp&id_dm='.$id_dm.'&page='.$pageNum.'">Trang cuối</a> ';
+}
+
 }
 
 $sqlDm = "SELECT * FROM dmsanpham WHERE id_dm = $id_dm";

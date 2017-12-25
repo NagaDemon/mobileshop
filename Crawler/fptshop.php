@@ -42,16 +42,19 @@ foreach($html->find('div.fs-icapps') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
+            $check = false;
     		while($row = mysqli_fetch_assoc($result)) {
-        		//echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '1', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
     		}
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '1', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                    mysqli_query($conn, $query);
+            }
 		} else {
 			$query = "INSERT INTO sanpham VALUES(null, '1', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -103,16 +106,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		//echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '2', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '2', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '2', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -163,16 +169,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '3', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '3', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '3', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -225,16 +234,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		//echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '5', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '5', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '5', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -285,16 +297,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '6', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '6', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '6', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -345,16 +360,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '8', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '8', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '8', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);
@@ -405,16 +423,19 @@ foreach($html->find('div.fs-lpil') as $sanpham)
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
-    		while($row = mysqli_fetch_assoc($result)) {
-        		echo 'id: ' . $row["ten_sp"]. '<br>';
-        		if ($ten != $row["ten_sp"]){
-        			$query = "INSERT INTO sanpham VALUES(null, '9', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
-    				mysqli_query($conn, $query);
-        		} else{
-        			$query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
-    				mysqli_query($conn, $query);
-        		}
-    		}
+            $check = false;
+            while($row = mysqli_fetch_assoc($result)) {
+                if($ten == $row["ten_sp"]) {
+                    $query = "UPDATE sanpham SET anh_sp = '$str_anh', gia_sp = '$gia', khuyen_mai = '$str_khuyenmai' WHERE ten_sp = '$ten'";
+                    mysqli_query($conn, $query);
+                    $check = true;
+                    break;
+                }
+            }
+            if($check == false) {
+                $query = "INSERT INTO sanpham VALUES(null, '9', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
+                mysqli_query($conn, $query);
+            }
 		}else {
 			$query = "INSERT INTO sanpham VALUES(null, '9', '$ten', '$str_anh', '$gia', '12 tháng', 'Sạc pin, tai nghe', 'Máy mới 100%', '$str_khuyenmai', 'Còn hàng', '0', 'Hàng xách tay')";
     		mysqli_query($conn, $query);

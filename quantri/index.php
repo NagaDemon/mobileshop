@@ -1,5 +1,5 @@
 ﻿<?php
-    ob_start();
+    @ob_start();
     session_start();
     if(isset($_SESSION['tk']) && isset($_SESSION['mk'])) {
         include_once('ketnoi.php');

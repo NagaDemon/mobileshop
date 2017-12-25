@@ -3,6 +3,11 @@
         var conf = confirm("Bạn có chắc chắn muốn đăng xuất?");
         return conf;
     }
+
+    function crawl() {
+        var conf = confirm("Thực hiện crawl dữ liệu từ website khác?");
+        return conf;
+    }
 </script>
 
 <div class="block-header">
@@ -40,7 +45,7 @@
     </div>
 
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <a href="index.php?page_layout=sanpham" class="tqt-link-div">
+        <a href="index.php?page_layout=donhang" class="tqt-link-div">
             <div class="info-box bg-cyan hover-zoom-effect">
                 <div class="icon">
                     <i class="material-icons">event_note</i>
@@ -68,7 +73,7 @@
     </div>
 
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-        <a href="#" class="tqt-link-div">
+        <a onclick="return crawl();" href="../Crawler/fptshop.php" class="tqt-link-div">
             <div class="info-box bg-blue hover-zoom-effect">
                 <div class="icon">
                     <i class="material-icons">autorenew</i>

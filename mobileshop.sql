@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2017 at 09:53 AM
+-- Generation Time: Dec 25, 2017 at 05:34 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -48,7 +48,8 @@ INSERT INTO `blsanpham` (`id_bl`, `id_sp`, `ten`, `dien_thoai`, `binh_luan`, `ng
 (7, 4, 'a', 'b', 'c', '2017-11-16 17:40:09'),
 (8, 4, 'trần quang tín', '01666068838', 'lorum ipsum dolor sit amet', '2017-11-16 17:40:41'),
 (9, 6, 'uyguygu', '123123', 'b', '2017-12-12 09:03:02'),
-(10, 6, 'dfasdf', '098481498498', 'dgergwerg', '2017-12-13 09:36:32');
+(10, 6, 'dfasdf', '098481498498', 'dgergwerg', '2017-12-13 09:36:32'),
+(11, 6, 'uyyu', '66546854', 'kjhkjhkj', '2017-12-22 04:26:18');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,9 @@ CREATE TABLE `donhang` (
 INSERT INTO `donhang` (`id_dh`, `ten`, `email`, `dien_thoai`, `dia_chi`, `tinh_trang`, `id_sp`, `so_luong`) VALUES
 (16, 'Trần Quang Tín', 'tranquangtin710@gmail.com', '01666068838', 'Mipec Riverside Long Biên', 0, '5,6', '3,1'),
 (17, 'tqt', 'afasdf@gmail.com', '14123213213', 'đống đa\r\n', 1, '6', '4'),
-(18, 'Hoàng Minh Tuấn', 'minhtuan@gmail.com', '123456789', 'Cầu Giấy, Hà Nội', 0, '2,3', '2,6');
+(18, 'Hoàng Minh Tuấn', 'minhtuan@gmail.com', '123456789', 'Cầu Giấy, Hà Nội', 1, '2,3', '2,6'),
+(19, 'Hoàng Minh Tuấn', 'tuanhm@gmail.com', '0132465465465', 'Cầu Giấy', 0, '6,2', '4,3'),
+(20, 'tín', 'tqt@gmail.com', '123', 'abc', 1, '1041,6', '3,6');
 
 -- --------------------------------------------------------
 
@@ -156,7 +159,9 @@ CREATE TABLE `thanhvien` (
 
 INSERT INTO `thanhvien` (`id_thanhvien`, `tai_khoan`, `email`, `quyen_truy_cap`, `mat_khau`) VALUES
 (1, 'tintran', 'tranquangtin710@gmail.com', 'Admin', 'tintran123'),
-(2, 'huyhoang', 'nguyenhuyhoang@gmail.com', 'Editor', 'huyhoang123');
+(2, 'huyhoang', 'nguyenhuyhoang@gmail.com', 'Admin', 'huyhoang123'),
+(3, 'minhtuan', 'hoangminhtuan@gmail.com', 'Admin', 'minhtuan123'),
+(4, 'dinhtuan', 'ledinhtuan@gmail.com', 'Admin', 'dinhtuan123');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +207,7 @@ ALTER TABLE `thanhvien`
 -- AUTO_INCREMENT for table `blsanpham`
 --
 ALTER TABLE `blsanpham`
-  MODIFY `id_bl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_bl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `dmsanpham`
 --
@@ -212,17 +217,17 @@ ALTER TABLE `dmsanpham`
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_dh` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_sp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1043;
 --
 -- AUTO_INCREMENT for table `thanhvien`
 --
 ALTER TABLE `thanhvien`
-  MODIFY `id_thanhvien` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_thanhvien` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
