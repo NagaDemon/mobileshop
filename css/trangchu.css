@@ -161,14 +161,14 @@ body{
 	text-decoration:none;
 	color:#000;
 	}
-	
-#navbar ul li#menu-home{
-	background:#3F3F3F;;
-	}
-	
-#navbar ul li#menu-home a{
+
+#navbar ul li.active {
+	background:#3F3F3F;
+}
+
+#navbar ul li.active a{
 	color:#FFF;
-	}
+}
 
 /*---------- Body----------*/
 #body{

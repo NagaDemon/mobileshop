@@ -135,7 +135,7 @@
                                 $dmsanpham = 'active';
                             } elseif ($_GET['page_layout'] == 'sanpham' || $_GET['page_layout'] == 'suasp' || $_GET['page_layout'] == 'themsp') {
                                 $sanpham = 'active';
-                            } elseif ($_GET['page_layout'] == 'donhang') {
+                            } elseif ($_GET['page_layout'] == 'donhang' || $_GET['page_layout'] == 'chitietdh') {
                                 $donhang = 'active';
                             } else {
                                 $home = 'active';

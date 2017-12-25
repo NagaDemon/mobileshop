@@ -1,10 +1,8 @@
-@charset "utf-8";
-/* CSS Document */
-
 .services{
-	width:720px;
+	width:718px;
 	height:auto;
-	margin-right:20px;
+	margin-left: 3px;
+	margin-right:22px;
 	margin-bottom:20px;
 	padding-top:20px;
 	}
@@ -12,7 +10,7 @@
 .services p{
 	width:100%;
 	font-family:Montserrat Light, sans-serif;
-	font-size:12px;
+	font-size:14px;
 	color:#666;
 	text-align:justify;
 	line-height:22px;

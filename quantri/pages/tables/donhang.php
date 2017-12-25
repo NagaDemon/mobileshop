@@ -1,3 +1,10 @@
+<script type="text/javascript">
+    function xoaDonHang() {
+        var conf = confirm("Bạn có chắc chắn muốn xóa đơn hàng này?");
+        return conf;    
+    }
+</script>
+
 <?php
     $sql = "SELECT * FROM donhang ORDER BY id_dh ASC";
     $query = mysql_query($sql);
@@ -21,9 +28,9 @@
                                 <th>Tên khách hàng</th>
                                 <th>Email</th>
                                 <th>Điện thoại</th>
-                                <th>Địa chỉ</th>
                                 <th>Tình trạng</th>
                                 <th>Chi tiết</th>
+                                <th>Xóa</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,7 +40,6 @@
                                 <td><?php echo $row['ten']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
                                 <td><?php echo $row['dien_thoai']; ?></td>
-                                <td><?php echo $row['dia_chi']; ?></td>
                                 <td>
                             	<?php 
                             	if($row['tinh_trang'] == 1) { 
@@ -44,6 +50,7 @@
                                 ?>
                                 </td>
                                 <td><a href="index.php?page_layout=chitietdh&id_dh=<?php echo $row['id_dh'];?>"><i class="material-icons" style="font-size: 20px;">edit</i></a></td>
+                                <td><a onclick="return xoaDonHang();" href="pages/forms/donhang/xoadh.php?id_dh=<?php echo $row['id_dh']; ?>"><i class="material-icons">delete</i></a></td>
                             </tr>
                         <?php } ?>
                         </tbody>
