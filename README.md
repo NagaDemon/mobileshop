@@ -54,5 +54,6 @@ Dưới đây là các bước để cài đặt Xampp trên Window:
 ### Home Page
 <img src = "https://imgur.com/6ipwOYP.png">
 <img src = "https://imgur.com/KH6oLye.png">
+
 ### Manager Page
 <img src = "https://imgur.com/FR5y3n6.png">
