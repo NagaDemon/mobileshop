@@ -45,7 +45,7 @@ $row = mysql_fetch_array($query);
     </div>
 
 <?php
-// Validate Form
+// Validate Form List Stuffs
 if(isset($_POST['submit'])) {
     $ten =  $_POST['ten'];
     $dien_thoai = $_POST['dien_thoai'];
