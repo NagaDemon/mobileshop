@@ -1,5 +1,8 @@
 <?php
-mysql_connect("localhost", "root", "");
-mysql_select_db("mobileshop");
-mysql_query("SET NAMES 'utf8'");
+$conn = mysqli_connect("localhost", "root", "", "mobileshop");
+$dbSetLang = mysqli_query($conn, "SET NAMES utf8");
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>
