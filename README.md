@@ -29,7 +29,7 @@ Dưới đây là các bước để cài đặt Xampp trên Window:
   
 ### Start Server Xampp
 <ul>
-  <li>Bây giờ bạn hãy vào thư mục c:\xampp và mở file xampp-panel.exe lên để bật bảng điều khiển của XAMPP.</li>
+  <li>Bây giờ bạn hãy vào thư mục C:\xampp và mở file xampp-panel.exe lên để bật bảng điều khiển của XAMPP.</li>
   <img src="https://thachpham.com/wp-content/uploads/2013/09/xampp-panel.jpg">
   
   Bạn để ý sẽ thấy hai ứng dụng Apache và MySQL có nút Start, đó là dấu hiệu bảo 2 ứng dụng này chưa được khởi động, hãy ấn vào nút Start của từng ứng dụng để khởi động Webserver Apache và MySQL Server lên thì mới chạy được localhost.
@@ -37,12 +37,21 @@ Dưới đây là các bước để cài đặt Xampp trên Window:
   <li>Nếu cả hai ứng dụng chuyển sang màu xanh như hình dưới là đã khởi động thành công.</li>
   <img src="https://thachpham.com/wp-content/uploads/2013/09/xampp-panel-start.jpg">
   
-  <li>Sau khi khởi động xong, bạn hãy truy cập vào website với địa chỉ là **http://localhost** sẽ thấy nó hiển thị ra trang giới thiệu XAMPP như hình dưới.</li>
+  <li>Sau khi khởi động xong, bạn hãy truy cập vào website với địa chỉ là http://localhost sẽ thấy nó hiển thị ra trang giới thiệu XAMPP như hình dưới.</li>
   <img src="https://thachpham.com/wp-content/uploads/2013/09/xampp-homepage.jpg">
   </ul>
   
 ### Import DataBase
-
+<ul>
+  <li>Để tạo database, bạn hãy truy cập vào localhost với đường dẫn http://localhost/phpmyadmin. Sau đó bạn nhấp vào menu Databases.</li>
+  <img src="https://thachpham.com/wp-content/uploads/2013/09/localhost-tao-database-01.jpg">
+  <li>Sau đó ở phần Create databsae, bạn nhập tên database cần tạo vào ô Database name, ở project này database tên là mobileshop</li>
+  <img src="https://imgur.com/Gh6GLA2.png">
+  </ul>
 
 
 ## Review
+### Home Page
+<img src = "https://imgur.com/6ipwOYP.png">
+### Manager Page
+<img src = "https://imgur.com/FR5y3n6">
