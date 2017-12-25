@@ -1,4 +1,3 @@
-// Giỏ hàng
 <script type="text/javascript">
     function deleteAll() {
         var conf = confirm("Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng?");

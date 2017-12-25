@@ -8,7 +8,7 @@ else{
     $page = 1;  
 }
 
-$rowsPerPage = 3;
+$rowsPerPage = 9;
 $perRow = $page*$rowsPerPage - $rowsPerPage;
 
 $sql = "SELECT * FROM sanpham WHERE id_dm = $id_dm ORDER BY id_sp DESC LIMIT $perRow, $rowsPerPage";

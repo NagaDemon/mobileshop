@@ -69,8 +69,7 @@
         
     	<!-- Left Column -->
     	<div id="l-col">
-        	<!-- <?php include_once('chucnang/tuvan/tuvan.php'); ?> -->
-            <?php include_once('chucnang/sanpham/danhmucsp.php'); ?>
+        	<?php include_once('chucnang/sanpham/danhmucsp.php'); ?>
             <?php include_once('chucnang/quangcao/quangcao.php'); ?>
             <!-- <div class="l-sidebar"></div> -->
         </div>
