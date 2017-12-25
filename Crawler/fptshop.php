@@ -10,7 +10,7 @@ $url = $main_url .'/apple/iphone';
 $html = file_get_html($url);
 foreach($html->find('div.fs-icapps') as $sanpham)
 {
-	//anh
+	//anh iphone
     //echo $sanpham->find('a img', 0) . '<br>';
     $img = $sanpham->find('a img', 0)->src;
     $str_anh = basename($img);
@@ -19,9 +19,9 @@ foreach($html->find('div.fs-icapps') as $sanpham)
     //save img to folder
     file_put_contents($u, file_get_contents('http:'.$img));
 
-    //ten
+    //ten san pham
     echo $ten = $sanpham->find('h3.fs-ilap-name a span', 0)->plaintext;
-    //gia
+    //gia san pham
     echo $str_gia = $sanpham->find('div.fs-ilap-if div.fs-ilap-price p.fs-ilap-pri', 0)->plaintext . '<br>';
     echo $gia = filter_var($str_gia, FILTER_SANITIZE_NUMBER_INT);
     //khuyen mai
