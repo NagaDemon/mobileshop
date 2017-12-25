@@ -1,3 +1,13 @@
 # mobileshop
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/php.svg?branch=master)]() [![Cookbook Version](https://img.shields.io/cookbook/v/php.svg)]()
+## Members
+<ul>
+  <li>Trần Quang Tín</li>
+  <li>Nguyễn Huy Hoàng</li>
+  <li>Lê Đình Tuấn</li>
+  <li>Hoàng Minh Tuấn</li>
+  </ul>
+  
+## Installation
+
+## Review
