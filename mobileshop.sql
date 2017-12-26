@@ -103,7 +103,8 @@ INSERT INTO `donhang` (`id_dh`, `ten`, `email`, `dien_thoai`, `dia_chi`, `tinh_t
 (17, 'tqt', 'afasdf@gmail.com', '14123213213', 'đống đa\r\n', 1, '6', '4'),
 (18, 'Hoàng Minh Tuấn', 'minhtuan@gmail.com', '123456789', 'Cầu Giấy, Hà Nội', 1, '2,3', '2,6'),
 (19, 'Hoàng Minh Tuấn', 'tuanhm@gmail.com', '0132465465465', 'Cầu Giấy', 0, '6,2', '4,3'),
-(20, 'tín', 'tqt@gmail.com', '123', 'abc', 1, '1041,6', '3,6');
+(20, 'Nguyễn Huy Hoàng', 'huyhoang_pro@huyhoangpro.com', '1900-9-5-0-8', 'Gầm Cầu Long Biên', 0, '6,2', '4,3')
+(21, 'tín', 'tqt@gmail.com', '123', 'abc', 1, '1041,6', '3,6');
 
 -- --------------------------------------------------------
 
